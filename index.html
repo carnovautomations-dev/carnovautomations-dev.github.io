@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Antonio Carnovale | Automation for small businesses</title>
-<meta name="description" content="I build n8n automations that answer leads, alert your team and follow up, so nothing gets forgotten. Based in Turin, Italy.">
+<meta name="description" content="I build n8n automations that capture leads, alert your team on Telegram and follow up, so nothing gets forgotten. Based in Turin, Italy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
@@ -50,7 +50,6 @@ h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.03em;fon
 .track li.hot .dot{background:var(--tape)}
 .track b{display:block;font-size:.95rem;line-height:1.2}
 .track span.s{display:block;font-size:.82rem;color:var(--muted);line-height:1.3;margin-top:4px}
-.track .time{font-weight:800;font-size:.8rem;color:var(--glass)}
 .pipe .note{margin:22px 0 0;font-size:.9rem;color:var(--muted)}
 @media (max-width:720px){
   .track{grid-template-columns:1fr;gap:16px}
@@ -97,24 +96,24 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem;border-top:2px sol
   <main>
     <div class="hero">
       <h1>I automate the follow-up that small businesses forget to do.</h1>
-      <p class="lede">I build n8n workflows that answer new leads in seconds, alert your team, and chase the ones nobody called back. Built for small trade businesses, from someone who worked in one.</p>
+      <p class="lede">I build n8n systems that capture every new lead, alert your team on their phone in seconds, and chase the ones nobody called back. Built for trade businesses, by someone who worked in one.</p>
       <div class="cta">
         <a class="btn" href="mailto:ty@cautomations.com">Email me</a>
         <a class="btn alt" href="#work">See the work</a>
       </div>
 
       <div class="pipe" aria-labelledby="pipe-title">
-        <h2 id="pipe-title">What happens when a form is submitted</h2>
+        <h2 id="pipe-title">What happens when a new lead comes in</h2>
         <p class="cap">One lead, handled from second zero.</p>
         <ol class="track">
-          <li><span class="dot"></span><b>Form sent</b><span class="s">Webhook with secret header</span></li>
-          <li><span class="dot"></span><b>Checked</b><span class="s">Bad emails rejected</span></li>
-          <li class="hot"><span class="dot"></span><b>Scored 0-100</b><span class="s">Budget, size, contact info</span></li>
-          <li><span class="dot"></span><b>Saved</b><span class="s">Airtable record</span></li>
-          <li><span class="dot"></span><b>Team alerted</b><span class="s">Slack, hot leads flagged</span></li>
-          <li><span class="dot"></span><b>Follow-ups</b><span class="s">After 24h and 72h if still "Nuovo"</span></li>
+          <li><span class="dot"></span><b>Lead arrives</b><span class="s">Website form, stand form or a voice note</span></li>
+          <li><span class="dot"></span><b>Checked</b><span class="s">Bad data rejected, duplicates caught</span></li>
+          <li><span class="dot"></span><b>Saved</b><span class="s">PostgreSQL, one table for every source</span></li>
+          <li class="hot"><span class="dot"></span><b>Team alerted</b><span class="s">Telegram card with status buttons</span></li>
+          <li><span class="dot"></span><b>Follow-ups</b><span class="s">Automatic emails until someone calls</span></li>
+          <li><span class="dot"></span><b>Morning list</b><span class="s">Who to call today, every day</span></li>
         </ol>
-        <p class="note">Set the lead to "Contattato" in Airtable and the follow-ups stop.</p>
+        <p class="note">Tap "Contacted" on the Telegram card and the follow-ups stop.</p>
       </div>
     </div>
 
@@ -124,17 +123,17 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem;border-top:2px sol
 
         <article class="proj">
           <div>
-            <h3>Lead follow-up for window installers</h3>
-            <p class="tag">n8n, Airtable, Slack, SMTP, JavaScript</p>
-            <p class="links"><a href="https://github.com/carnovautomations-dev/n8n-lead-followup-automation">Code on GitHub</a></p>
+            <h3>Lead follow-up system for installers</h3>
+            <p class="tag">n8n, PostgreSQL, NocoDB, Telegram, JavaScript</p>
+            <p class="links"><a href="https://github.com/carnovautomations-dev/n8n-lead-followup-automation">Open-source v1 on GitHub</a></p>
           </div>
           <div>
-            <span class="status">Tested end to end</span>
+            <span class="status">v2 tested end to end, ready to install</span>
             <ul>
               <li>Replaces "whoever remembers to check the inbox" with a process that runs on its own.</li>
-              <li>Scores each lead, parses Italian budget formats (3.500, 10.000, 3,5k), and marks high-priority ones.</li>
-              <li>Includes a separate error workflow that alerts Slack when something breaks.</li>
-              <li>Ships with a sanitized export and a setup README, so another person can install it.</li>
+              <li>Leads from the website, from trade-show stands and from voice notes recorded after a site visit, all in one place.</li>
+              <li>The team works from Telegram: a card per lead, buttons to update status and set reminders.</li>
+              <li>Self-hosted: PostgreSQL with nightly backups, a password-protected table view per client, secrets kept out of the workflows.</li>
             </ul>
           </div>
         </article>
@@ -142,25 +141,29 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem;border-top:2px sol
         <article class="proj">
           <div>
             <h3>Miniad</h3>
-            <p class="tag">Small web app, live demo</p>
-            <p class="links"><a href="https://carnovautomations-dev.github.io/miniad/">Live demo</a><a href="https://github.com/carnovautomations-dev/miniad">Code</a></p>
+            <p class="tag">Web app for installers, live demo</p>
+            <p class="links"><a href="https://carnovautomations-dev.github.io/Miniad/">Live demo</a><a href="https://github.com/carnovautomations-dev/Miniad">Code</a></p>
           </div>
           <div>
             <ul>
-              <li>A lightweight ad tool you can try in the browser without signing up.</li>
-              <li>Built and published by me, code open on GitHub.</li>
+              <li>Site surveys on a tablet: windows, doors and shutters with their measurements, instead of a paper notebook.</li>
+              <li>Prices calculated automatically from your own price list, per unit or per m².</li>
+              <li>The quote is ready to show and print before you leave the customer's house.</li>
+              <li>Runs in the browser, no install and no signup.</li>
             </ul>
           </div>
         </article>
 
         <article class="proj">
           <div>
-            <h3>Dental clinic chatbot</h3>
-            <p class="tag">n8n, Airtable, Typebot</p>
+            <h3>Booking chatbot for a dental clinic</h3>
+            <p class="tag">n8n, Airtable, Typebot, Google Drive</p>
           </div>
           <div>
+            <span class="status">Prototype</span>
             <ul>
-              <li>A chatbot flow that collects patient requests and stores them in Airtable through n8n.</li>
+              <li>A chat flow that registers new patients and handles booking, rescheduling and cancelling through n8n webhooks.</li>
+              <li>Creates the patient record and a document folder automatically.</li>
             </ul>
           </div>
         </article>
@@ -169,10 +172,11 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem;border-top:2px sol
           <div>
             <h3>RAL calculator</h3>
             <p class="tag">Web tool, JavaScript</p>
+            <p class="links"><a href="https://github.com/carnovautomations-dev/jet-hr-salary-calculator">Code</a></p>
           </div>
           <div>
             <ul>
-              <li>A calculator that turns an Italian gross annual salary (RAL) into an estimate of net pay.</li>
+              <li>Turns an Italian gross annual salary (RAL) into an estimate of net pay.</li>
             </ul>
           </div>
         </article>
@@ -184,14 +188,14 @@ footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem;border-top:2px sol
       <div class="two">
         <div>
           <h2 class="sec">About</h2>
-          <p>I'm Antonio, 22, from Turin. I spent time installing windows and doors, and I now run my own business (VAT number since December 2025).</p>
+          <p>I'm Antonio, from Turin. I spent years installing windows and doors, and I now run my own business.</p>
           <p>On site I saw how leads get lost: a missed call, an unanswered email, a quote nobody chased. That is the problem I now solve with software.</p>
-          <p>I work alone, so you talk directly to the person who builds it. Italian is my native language and I'm fluent in English.</p>
+          <p>I work alone, so you talk directly to the person who builds it. Italian is my native language and I'm fluent in English. I work remotely with clients in Italy and abroad.</p>
         </div>
         <div>
           <h2 class="sec">Tools</h2>
           <ul class="stack">
-            <li>n8n</li><li>Airtable</li><li>Slack</li><li>Webhooks</li><li>JavaScript</li><li>SMTP / Brevo</li><li>Typebot</li><li>Chatbots</li>
+            <li>n8n (self-hosted)</li><li>PostgreSQL</li><li>NocoDB</li><li>Telegram bots</li><li>Webhooks &amp; APIs</li><li>JavaScript</li><li>OpenAI / Claude APIs</li><li>Airtable</li><li>Docker</li><li>Typebot</li>
           </ul>
         </div>
       </div>
